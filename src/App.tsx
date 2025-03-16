@@ -2,8 +2,6 @@ import { Button } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 
-import './App.css';
-
 function App() {
   return (
     <div className="bg-background text-foreground flex min-h-screen flex-col">
