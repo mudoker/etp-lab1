@@ -1,28 +1,81 @@
-# React + TypeScript + Vite
+# Frontend for HCMC Metro Operation Web Application (OPWA)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Operator Web Application (OPWA) for the Ho Chi Minh City (HCMC) Metro System is built using React 19, Vite, and Tailwind CSS. This document provides an overview of the setup process and system requirements.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+- pnpm (v8 or later recommended)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Metro-System-Application/OPWA-FE.git
+   cd OPWA-FE
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+## 🛠️ Development
+
+### Available Scripts
+
+You can run:
+
+- `pnpm dev` - Starts the development server
+- `pnpm start` - Alias for `pnpm dev`
+- `pnpm build` - Builds the app for production
+- `pnpm lint` - Lints the codebase
+- `pnpm format` - Formats code using Prettier
+- `pnpm preview` - Previews the production build locally
+
+### Continuous Integration
+
+This project uses GitHub Actions for CI/CD. Every push and pull request to the main branch triggers:
+
+- Dependency installation
+- Code building process
+
+## 🪝 Husky
+
+This project uses Husky to enforce code quality through Git hooks. Husky automatically runs checks before commits and pushes to ensure code quality standards are maintained.
+
+### Setup
+
+Husky is installed and configured automatically when you run `pnpm install` thanks to the `prepare` script in package.json.
+
+### Available Hooks
+
+- **Pre-commit**: Runs linting and type checking before allowing commits
+- **Pre-push**: Ensures all tests pass before allowing code to be pushed
+
+To modify hooks or add new ones, edit the files in the `.husky` directory.
+
+## 📝 ESLint Configuration
+
+This project uses ESLint for code quality. To enable type-aware lint rules, update the configuration:
 
 ```js
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
+    // Or for stricter rules: ...tseslint.configs.strictTypeChecked,
+    // For stylistic rules: ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -31,7 +84,7 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For React-specific lint rules, you can install additional plugins:
 
 ```js
 // eslint.config.js
@@ -40,15 +93,16 @@ import reactDom from 'eslint-plugin-react-dom'
 
 export default tseslint.config({
   plugins: {
-    // Add the react-x and react-dom plugins
     'react-x': reactX,
     'react-dom': reactDom,
   },
   rules: {
-    // other rules...
-    // Enable its recommended typescript rules
     ...reactX.configs['recommended-typescript'].rules,
     ...reactDom.configs.recommended.rules,
   },
 })
 ```
+
+## 📄 License
+
+None
