@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write src/**/*.{ts,tsx,js,jsx,json,md}",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "@radix-ui/react-toggle-group": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.8",
     "@tailwindcss/vite": "^4.0.14",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.0",
@@ -46,6 +48,8 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.482.0",
     "next-themes": "^0.4.6",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^19.0.0",
     "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
