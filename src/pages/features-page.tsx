@@ -1,0 +1,12 @@
+const FeaturesPage = () => {
+    return (
+        <div className="flex min-h-[70vh] flex-col items-center justify-center">
+            <h1 className="text-5xl font-bold text-primary">Staff Portal</h1>
+            <p className="mt-4 text-xl text-muted-foreground">
+                This is the Staff Portal for HCMC Metro OPWA
+            </p>
+        </div>
+    );
+};
+
+export default FeaturesPage;
