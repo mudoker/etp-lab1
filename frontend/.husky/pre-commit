@@ -1,2 +1,14 @@
-pnpm format
-pnpm i
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Get the current directory
+current_dir=$(pwd)
+
+# Check if we're in the frontend directory
+if [[ "$current_dir" == *"frontend"* ]]; then
+  echo "Running pre-commit hooks for frontend..."
+  cd "$(dirname "$0")/.." && pnpm format
+  cd "$(dirname "$0")/.." && pnpm i
+else
+  echo "Skipping frontend pre-commit hooks as changes are not in the frontend directory"
+fi
