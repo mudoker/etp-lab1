@@ -1,16 +1,26 @@
 import { NavLink, Outlet } from 'react-router-dom';
+
 import { Button } from '@/components/ui/button';
 
 const Layout = () => {
-  const NavItem = ({ to, label, end = false }: { to: string; label: string; end?: boolean }) => (
+  const NavItem = ({
+    to,
+    label,
+    end = false,
+  }: {
+    to: string;
+    label: string;
+    end?: boolean;
+  }) => (
     <NavLink to={to} end={end}>
       {({ isActive }) => (
         <Button
           variant={isActive ? 'secondary' : 'ghost'}
-          className={`relative px-3 md:px-6 transition-all duration-300 ${isActive
-            ? 'font-medium'
-            : 'text-muted-foreground hover:text-foreground'
-            }`}
+          className={`relative px-3 transition-all duration-300 md:px-6 ${
+            isActive
+              ? 'font-medium'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
         >
           {label}
           {isActive && (
@@ -24,9 +34,9 @@ const Layout = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="border-border bg-background sticky top-0 border-b shadow-sm">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between p-4 gap-4">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-4 p-4 md:flex-row">
           <div className="flex items-center gap-3">
-            <div className="bg-primary/10 relative h-8 w-8 md:h-10 md:w-10 overflow-hidden rounded-full p-1.5">
+            <div className="bg-primary/10 relative h-8 w-8 overflow-hidden rounded-full p-1.5 md:h-10 md:w-10">
               <img
                 src="/hcmc-metro-logo.png"
                 alt="HCMC Metro Logo"
@@ -34,14 +44,16 @@ const Layout = () => {
               />
             </div>
             <div>
-              <h1 className="text-foreground text-xl md:text-2xl font-bold">OPWA</h1>
+              <h1 className="text-foreground text-xl font-bold md:text-2xl">
+                OPWA
+              </h1>
               <p className="text-muted-foreground text-xs font-medium">
                 HCMC Metro Authority
               </p>
             </div>
           </div>
 
-          <nav className="flex gap-1 md:gap-2 rounded-lg p-1 overflow-x-auto w-full md:w-auto">
+          <nav className="flex w-full gap-1 overflow-x-auto rounded-lg p-1 md:w-auto md:gap-2">
             <NavItem to="/" label="Dashboard" end={true} />
             <NavItem to="/features" label="Staff Portal" />
             <NavItem to="/about" label="System Info" />
