@@ -1,6 +1,6 @@
-# Frontend for HCMC Metro Operation Web Application (OPWA)
+# Enterprise Web Application: Lab Test 1
 
-The Operator Web Application (OPWA) for the Ho Chi Minh City (HCMC) Metro System is built using React 19, Vite, and Tailwind CSS. This document provides an overview of the setup process and system requirements.
+This is the frontend repository for the lab test 1 of the Enterprise Web Application course. The project uses Vite, React, and TypeScript.
 
 ## 🚀 Quick Start
 
@@ -13,8 +13,7 @@ The Operator Web Application (OPWA) for the Ho Chi Minh City (HCMC) Metro System
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Metro-System-Application/OPWA-FE.git
-   cd OPWA-FE
+   git clone https://github.com/mudoker/etp-lab1.git
    ```
 
 2. Install dependencies:
