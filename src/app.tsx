@@ -5,15 +5,16 @@ import AboutPage from '@/pages/about-page';
 import FeaturesPage from '@/pages/features-page';
 import HomePage from '@/pages/home-page';
 
+import NavigationBar from './pages/dashboard/components/navigation-bar';
+
+// import Dashboard from './pages/dashboard/page';
+
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="features" element={<FeaturesPage />} />
-          <Route path="about" element={<AboutPage />} />
-        </Route>
+        {/* <Route path="/" element={<Dashboard />}> */}
+        {/* </Route> */}
       </Routes>
     </BrowserRouter>
   );
